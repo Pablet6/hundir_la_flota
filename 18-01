@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+
+public class EnfonsarLaFlota {
+
+	public static void main(String []Args) {
+		Scanner sc=new Scanner(System.in);
+		String text=null;
+		int opcioMenu=0;
+		int min=1;
+		int max=3;
+		mostrar_menu( opcioMenu, sc, text,  min, max);		
+		
+		
+	}
+	
+	public static void mostrar_menu(int opcioMenu, Scanner sc, String text, int max, int min) {
+		 System.out.println("=====BENVINGUTS A AFONAR LA FLOTA=====");
+			System.out.println("Nivells de dificultat");
+			System.out.println("1. Facil: 5 llanxes, 3 vaixells, 1 cuirasat i 1 portaavions (50)Trets");
+			System.out.println("2. Mitja: 2 llanxes, 1 vaixells, 1 cuirasat i 1 portaavions (30)Trets");
+			System.out.println("3. Dificil: 1 llanxa, i 1 vaixell (10)Trets");
+			System.out.println("Quin nivell tries?");
+			demana_dades_entre_max_i_min(text,  min, max, sc, opcioMenu); 
+			switch(opcioMenu) {
+			case 1:
+				jugar_partida();
+				
+				break;
+			}
+	 }
+	 
+	static void jugar_partida() {
+		crear_tauler();
+		
+		
+		
+	}
+	
+	
+	public static void demana_dades_entre_max_i_min(String text, int min, int max,  Scanner sc, int opcioMenu) {
+	
+		do {	
+			opcioMenu=sc.nextInt();
+		if (opcioMenu>max || opcioMenu<min) {
+			text="Opcio incorrecta, torna a introduir la teua eleccio entre el 1 y el 3";
+		
+		}else if (opcioMenu==1){	
+			text="Has agafat el nivell facil";
+		}else if (opcioMenu==2) {
+			text="Has agafat el nivel mitja";
+		}else {
+			text="Has agafat el nivel dificil";
+		}
+		System.out.println(text);
+	 } while (opcioMenu>max || opcioMenu<min);
+		
+		
+	}
+	
+	static void crear_tauler() {
+		
+	}
+	
+	
+	
+	
+}
